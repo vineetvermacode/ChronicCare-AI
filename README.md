@@ -1,4 +1,3 @@
-# ChronicCare-AI
 # 🤖 ChronicCare AI
 
 **ChronicCare AI** is an intelligent, interactive web application that **predicts diseases** based on user-provided symptoms and provides a comprehensive care plan including:
