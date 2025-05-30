@@ -58,6 +58,18 @@ User-friendly frontend with Flask + HTML/CSS + JavaScript.
 | AI Logic   | Rule-based or ML model (optional) |
 
 ---
+
+## 👥 Team Members
+
+| Name             |  GitHub                                         | LinkedIn                                         |
+|------------------|------------------------------------------------|--------------------------------------------------|
+| Vineet Verma        |  [@vineetvermacode](https://github.com/vineetvermacode) | [@vineetvermacode](https://linkedin.com/in/vineetvermacode)     |
+| Vishal Patel     |  [@vishaljaiswada](https://github.com/vishaljaiswada)       | [@vishal-patel-71084a235](https://linkedin.com/in/vishal-patel-71084a235)     |
+| Vidya Chauhan     |  [@teammate2](https://github.com/teammate2)       | [LinkedIn](https://linkedin.com/in/teammate2)     |
+| Yatish Kumar   |  [@teammate3](https://github.com/teammate3)       | [LinkedIn](https://linkedin.com/in/teammate3)     |
+
+---
+
 ## Create a Virtual Environment
 ```bash
 python -m venv venv
