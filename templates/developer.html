@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>ChronicCare-AI</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo.png') }}">
+    <style>
+          .logo {
+            width: 50px;
+            height: 50px;
+            color: black;
+            margin-top: 0;
+            margin-left: 2px;
+        }
+        .container{
+        color: white;
+        }
+        body {
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: rgb(125, 125, 125);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .myimg {
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 25px;
+        }
+        .animated-navbar {
+    animation: slideInDown 0.8s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    border-bottom: 2px solid #1db954;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #1db954 !important;
+}
+
+.hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #1db954;
+    transition: width 0.3s ease-in-out;
+}
+
+.hover-underline:hover::after {
+    width: 100%;
+}
+.navbar-nav .nav-link.active {
+    color: #1db954 !important; /* Bright green */
+    font-weight: bold;
+    position: relative;
+}
+.navbar-nav .nav-link.active::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: -4px;
+    left: 0;
+    background-color: #1db954;
+    border-radius: 2px;
+}
+
+        .card {
+            height: 100%;
+        min-height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-img-top {
+            max-height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.1);
+        }
+
+        .btn-primary {
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+        }
+
+        /* Responsive design */
+        @media (max-width: 767px) {
+            .card {
+                max-width: 100%;
+            }
+        }
+
+    </style>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow animated-navbar">
+    <div class="container-fluid">
+        <!-- Logo at the top-left corner -->
+        <div class="logo">
+            <img alt="Logo" class="myimg" src="{{ url_for('static', filename='logo.png') }}">
+        </div>
+
+
+        <a class="navbar-brand animate__animated animate__fadeIn" href="/">Chronic Care AI</a>
+        <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse animated-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a aria-current="page"
+                       class="nav-link hover-underline {% if request.path == '/' %}active{% endif %}" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline {% if request.path == '/about' %}active{% endif %}"
+                       href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline {% if request.path == '/contact' %}active{% endif %}"
+                       href="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline {% if request.path == '/developer' %}active{% endif %}"
+                       href="/developer">Developer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link hover-underline {% if request.path == '/blog' %}active{% endif %}" href="/blog">Blog</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<section style="padding: 30px;">
+  <h2 style="text-align:center; font-size: 40px; font-weight: bold; color: white; margin-bottom: 30px;">Meet Our Developers</h2>
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+
+    <!-- Developer Card: Vishal Patel -->
+    <div style="width: 260px; background: white; padding: 10px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: center;">
+      <img src="{{ url_for('static', filename='assets/vishal.gif') }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+      <h3 style="margin-top: 15px; font-size: 20px; color: #222;">Vishal Patel</h3>
+      <p style="font-size: 14px; color: #666;">Team Leader</p>
+      <p style="font-size: 13px; color: #444;">Lead Developer at ChronicCare AI. Passionate about building innovative AI solutions.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#developerModal1">View Profile</button>
+    </div>
+
+    <!-- Developer Card: Vineet Verma -->
+    <div style="width: 260px; background: white; padding: 10px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: center;">
+      <img src="{{ url_for('static', filename='assets/vineet.gif') }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+      <h3 style="margin-top: 15px; font-size: 20px; color: #222;">Vineet Verma</h3>
+      <p style="font-size: 14px; color: #666;">UI & Model Integrator</p>
+      <p style="font-size: 13px; color: #444;">Handled UI design and integrated AI models for condition prediction system efficiently.</p>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#developerModal2">View Profile</button>
+    </div>
+
+    <!-- Developer Card: Vidya Chauhan -->
+    <div style="width: 260px; background: white; padding: 10px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: center;">
+      <img src="{{ url_for('static', filename='assets/vidya.gif') }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+      <h3 style="margin-top: 15px; font-size: 20px; color: #222;">Vidya Chauhan</h3>
+      <p style="font-size: 14px; color: #666;">Backend & API</p>
+      <p style="font-size: 13px; color: #444;">Managed backend APIs, handled databases, and supported deployment tasks effectively.</p>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#developerModal3">View Profile</button>
+    </div>
+
+    <!-- Developer Card: Yatish Kumar -->
+    <div style="width: 260px; background: white; padding: 10px; border-radius: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); text-align: center;">
+      <img src="{{ url_for('static', filename='assets/yatish.gif') }}" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px;">
+      <h3 style="margin-top: 15px; font-size: 20px; color: #222;">Yatish Kumar</h3>
+      <p style="font-size: 14px; color: #666;">Data Specialist</p>
+      <p style="font-size: 13px; color: #444;">Worked on data preprocessing, cleaning tasks, and training machine learning pipelines.</p>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#developerModal4">View Profile</button>
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- Modal for Developer 1 Profile -->
+    <div class="modal fade" id="developerModal1" tabindex="-1" aria-labelledby="developerModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="developerModalLabel1">John Doe's Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ url_for('static', filename='assets/vishal.gif') }}" alt="Developer Image" class="img-fluid rounded mb-3" style="display: block; margin: auto; width: 50%;">
+                    <h5>Role:</h5>
+                    <p>Team Leader</p>
+                    <h5>Bio:</h5>
+                    <p>JLead Developer at Chronic Care AI. Passionate about building innovative AI solutions.</p>
+                    <h5>Skills:</h5>
+                    <ul>
+                        <li>Machine Learning</li>
+                        <li>Problem Solving</li>
+                        <li>Leadership Quality</li>
+                        <li>Web Developer</li>
+                    </ul>
+                    <h5>Contact:</h5>
+                    <p>Email: itfw21002@glbitm.ac.in</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Developer 2 Profile -->
+    <div class="modal fade" id="developerModal2" tabindex="-1" aria-labelledby="developerModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="developerModalLabel2">Vineet Verma's Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ url_for('static', filename='assets/vineet.gif') }}" alt="Developer Image" class="img-fluid rounded mb-3" style="display: block; margin: auto; width: 50%;">
+                    <h5>Role:</h5>
+                    <p>UI Developer & Model Integrator</p>
+                    <h5>Bio:</h5>
+                    <p>UI developer & model integrator, handled front-end design and AI model integration.</p>
+                    <h5>Skills:</h5>
+                    <ul>
+                        <li>Web Developer</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                        <li>Problem Solving</li>
+                        <li>Software Development</li>
+                    </ul>
+                    <h5>Contact:</h5>
+                    <p>Email: vermavineet9141@gmail.com</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Developer 3 Profile -->
+    <div class="modal fade" id="developerModal3" tabindex="-1" aria-labelledby="developerModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="developerModalLabel3">Vidya Chauhan's Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ url_for('static', filename='assets/vidya.gif') }}" alt="Developer Image" class="img-fluid rounded mb-3" style="display: block; margin: auto; width: 50%;">
+                    <h5>Role:</h5>
+                    <p>Backend and Support Tasks</p>
+                    <h5>Bio:</h5>
+                    <p>Backend developer, managed API integration, database, and deployment support.</p>
+                    <h5>Skills:</h5>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Machine Learning</li>
+                        <li>Java</li>
+                        <li>Database Management</li>
+                    </ul>
+                    <h5>Contact:</h5>
+                    <p>Email: vidyachauhan687@gmail.com</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Developer 4 Profile -->
+    <div class="modal fade" id="developerModal4" tabindex="-1" aria-labelledby="developerModalLabel4" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="developerModalLabel4">Yatish Kumar's Profile</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="{{ url_for('static', filename='assets/yatish.gif') }}" alt="Developer Image" class="img-fluid rounded mb-3" style="display: block; margin: auto; width: 50%;">
+                    <h5>Role:</h5>
+                    <p>Data Specialist</p>
+                    <h5>Bio:</h5>
+                    <p>Data specialist, worked on data preprocessing and trained machine learning models.</p>
+                    <h5>Skills:</h5>
+                    <ul>
+                        <li>Problem Solving</li>
+                        <li>Machine Learning</li>
+                        <li>Java</li>
+                        <li>Database Management</li>
+                    </ul>
+                    <h5>Contact:</h5>
+                    <p>Email: it21008@glbitm.ac.in</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script crossorigin="anonymous"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
