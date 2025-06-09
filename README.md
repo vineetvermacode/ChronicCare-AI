@@ -65,8 +65,8 @@ User-friendly frontend with Flask + HTML/CSS + JavaScript.
 |------------------|------------------------------------------------|--------------------------------------------------|
 | Vineet Verma        |  [@vineetvermacode](https://github.com/vineetvermacode) | [@vineetvermacode](https://linkedin.com/in/vineetvermacode)     |
 | Vishal Patel     |  [@vishaljaiswada](https://github.com/vishaljaiswada)       | [@vishal-patel-71084a235](https://linkedin.com/in/vishal-patel-71084a235)     |
-| Vidya Chauhan     |  [@teammate2](https://github.com/teammate2)       | [LinkedIn](https://linkedin.com/in/teammate2)     |
-| Yatish Kumar   |  [@teammate3](https://github.com/teammate3)       | [LinkedIn](https://linkedin.com/in/teammate3)     |
+| Vidya Chauhan     |  [@Vid876](https://github.com/Vid876)       | [@vidya-chauhan-077290253](https://www.linkedin.com/in/vidya-chauhan-077290253/)     |
+| Yatish Kumar   |  [@teammate3](https://github.com/teammate3)       | [@yatish-kumar-259043257](https://www.linkedin.com/in/yatish-kumar-259043257/)     |
 
 ---
 
